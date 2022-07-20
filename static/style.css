@@ -9,7 +9,7 @@ logo: #0e6ac7
 */
 :root{
     --background-color: hsl(0, 0%, 95%);
-    --primary-color: #016bd4;
+    --primary-color: #3498db;
     --primary-color-alt: #797EF6;
     --secondary-color: #2babeb;
     --font-color: #414141;
@@ -54,12 +54,16 @@ body{
 
 /*--================ left section ===========--*/
 .left_section{
-    width: 20%;
+    position: fixed;
+    width: 15rem;
     background-color: var(--white);
     margin: 0;
     margin-right: 2rem;
-    box-shadow: 2px 0 10px -5px
-    /*border: 1px solid #111;*/
+    box-shadow: 2px 0 10px -5px;
+}
+.left_holder{
+    width: 15rem;
+    margin-right: 2rem;
 }
 .left_section-logo{
     display: flex;
@@ -98,10 +102,11 @@ body{
 
 /*--================ right section ===========--*/
 .right_section{
-    width: 80%;
+    width: 75%;
     margin: 0 2rem 0 0;
-    /* border: 1px solid #111; */
 }
+
+/*++++++++++++++++++++++ top bar ++++++++++++++++*/
 .right_topbar{
     display: flex;
     align-items: center;
@@ -135,6 +140,7 @@ body{
     flex: 3 0 auto;
 }
 
+/*+++++++++++++++++++++ dashboard cards ++++++++++++++++*/
 .cards_container{
     display: flex;
     
@@ -198,23 +204,23 @@ body{
     width:20px;
     height:20px;
     border-radius:50%;
-  }
+}
   .card_percentage .last_month-icon{
     position:absolute;
     font-size: 5rem;
     top: 2rem;
     right: 0.5rem;
     color: var(--primary-color)
-  }
+}
   .piechart{
     position:absolute;
     color: var(--secondary-color)! important;
     top: 5rem;
     right: 2.5rem;
-  }
+}
 
-  /* ========== pie chart ======== */
-  @property --p{
+/* ========== pie chart ======== */
+@property --p{
     syntax: '<number>';
     inherits: true;
     initial-value: 0;
@@ -259,3 +265,103 @@ body{
     from{--p:0}
   }
   
+  /*+++++++++++++++++++++ transaction table ++++++++++++++++*/
+  .table_container{
+    margin-top: 2rem;
+    margin-bottom: 3rem
+  }
+  .transaction_header{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 1rem;
+  }
+  .transaction_table{
+    margin: 1rem  1rem;
+    border-radius: 0.75rem;
+    box-shadow: 0px 1px 10px -5px;
+    
+  }
+
+/*------------- table -------*/
+  table { 
+	width: 100%; 
+	border-collapse: collapse;
+	margin: auto;
+	}
+
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+	background: #eee; 
+	}
+
+th { 
+	background: var(--primary-color); 
+	color: white; 
+	font-weight: bold;
+    
+	}
+th:first-child{
+    border-top-left-radius: 0.75rem; 
+}
+th:last-child{
+    border-top-right-radius: 0.75rem;
+}
+
+td, th { 
+	padding: 1rem; 
+	text-align: left; 
+	font-size: 1rem;
+	}
+
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	table { 
+	  	width: 100%; 
+	}
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc; }
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		/* Label the data */
+		content: attr(data-column);
+
+		color: #000;
+		font-weight: bold;
+	}
+
+}
