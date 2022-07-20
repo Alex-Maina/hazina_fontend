@@ -10,7 +10,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;500;700&family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-
+        
         <link rel="stylesheet" href="./static/style.css">
     </head>
     <body>
@@ -47,7 +47,69 @@
 
             <!--================= right section =============-->
             <div class="right_section">
-                
+
+                <div class="right_topbar">
+                    <p class="salutation">Good Morning Alex</p>
+                    <div class="space"> </div>
+                    <div class="expense_status okay"></div>
+                    <div class="user">
+                        <img src="img/mk1.jpg" alt="" class="user_img" title="Alex"/>
+                    </div>
+                </div>
+<!--========================================= cards =============================-->
+                <div class="cards_container">
+                    <div class="card current_expense">
+                        <div class="month">
+                            <p class="month_highlight">Total expense this month:</p>
+                            <p class="amount">Ksh. 90,583.00</p>
+                        </div>
+                        <div class="month">
+                            <p class="month_highlight">Daily average expense:</p>
+                            <p class="amount">Ksh. 5,421.36</p>
+                        </div>
+                        <div class="card_percentage">
+                            <i class="uil uil-angle-down card_percentage-icon"></i>
+                            <span id="current_percentage">-3%</span>
+                            <hr>
+                            <span class="percentage_month">last month</span> 
+
+                            <div class="ball okay"></div>
+                        </div>
+                    </div>
+
+                    <div class="card last_expense">
+                        <div class="month">
+                            <p class="month_highlight">Total expense last month:</p>
+                            <p class="amount">Ksh. 90,583.00</p>
+                        </div>
+                        <div class="month">
+                            <p class="month_highlight">Daily average expense:</p>
+                            <p class="amount">Ksh. 5,421.36</p>
+                        </div>
+                        <div class="card_percentage">
+                            <i class="uil uil-money-withdrawal last_month-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="month">
+                            <p class="month_highlight">Monthly Budget:</p>
+                            <p class="amount">Ksh. 100,000.00</p>
+                        </div>
+                        <div class="month">
+                            <p class="month_highlight">Remaining:</p>
+                            <p class="amount">Ksh. 5,421.36</p>
+                        </div>
+
+                        <div class="card_percentage piechart">
+                            <div class="pie animate" style="--p:60">
+                                Total spent <span class="pie_percentage"> 60% </span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
 
             </div>
 
