@@ -14,7 +14,7 @@ logo: #0e6ac7
     --secondary-color: #2babeb;
     --font-color: #414141;
     --white: hsl(0, 0%, 99%);
-    --green: rgb(45, 212, 3);
+    --green: #2dd403;
     --okay: linear-gradient(90deg, #f8ff00 0%, #3ad59f 100%);
     --warning: linear-gradient(0deg, rgba(204,223,46,1) 0%, rgba(255,244,73,1) 100%);
     --danger: linear-gradient(to left, #f5af19, #f12711);
@@ -22,8 +22,9 @@ logo: #0e6ac7
     --medium-gap: 2.5rem;
     --small-gap: 2rem;
     --smaller-gap: 1.5rem;
-    
+    color: #36d80e
 }
+
 body{
     background-color: var(--background-color);
     height: 100%;
@@ -50,7 +51,9 @@ body{
 .danger{
    background: var(--danger);
 }
-
+.hidden{
+    display: none;
+}
 
 /*--================ left section ===========--*/
 .left_section{
@@ -175,7 +178,7 @@ body{
     width: 5rem;
     height: 6rem;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 400;
     text-align: center;
     top: 3rem;
     right: 1rem;
@@ -194,7 +197,7 @@ body{
 }
 .percentage_month{
     color: var(--primary-color);
-    font-weight: 400;
+    font-weight: 300;
     font-size: 0.9rem;
 }
 .ball{
@@ -207,16 +210,16 @@ body{
 }
   .card_percentage .last_month-icon{
     position:absolute;
-    font-size: 5rem;
+    font-size: 3.5rem;
     top: 2rem;
     right: 0.5rem;
     color: var(--primary-color)
 }
   .piechart{
     position:absolute;
-    color: var(--secondary-color)! important;
+    color: var(--secondary-color);
     top: 5rem;
-    right: 2.5rem;
+    right: 1.2rem;
 }
 
 /* ========== pie chart ======== */
@@ -227,9 +230,9 @@ body{
 }
   .pie {
     --p: 0;
-    --b: 0.25rem;
+    --b: 0.2rem;
     --c: var(--primary-color);
-    --w: 100px;
+    --w: 80px;
     
     width:var(--w);
     aspect-ratio:1;
@@ -258,6 +261,41 @@ body{
     background:var(--c);
     transform:rotate(calc(var(--p)*3.6deg)) translateY(calc(50% - var(--w)/2));
   }
+
+  .pie2 {
+    --p: 0;
+    --b: 0.2rem;
+    --c: #ff3f2a;
+    --w: 80px;
+    
+    width:var(--w);
+    aspect-ratio:1;
+    position:relative;
+    display:inline-grid;
+    margin:5px;
+    place-content:center;
+    font-size:0.8rem;
+  }
+  .pie2:before,
+  .pie2:after {
+    content:"";
+    position:absolute;
+    border-radius:50%;
+  }
+  .pie2:before {
+    inset:0;
+    background:
+      radial-gradient(farthest-side,var(--c) 98%,#0000) top/var(--b) var(--b) no-repeat,
+      conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
+    -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+            mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+  }
+  .pie2:after {
+    inset:calc(50% - var(--b)/2);
+    background:var(--c);
+    transform:rotate(calc(var(--p)*3.6deg)) translateY(calc(50% - var(--w)/2));
+  }
+
   .animate {
     animation:p 1s .5s both;
   }
