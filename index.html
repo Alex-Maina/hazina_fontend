@@ -50,9 +50,9 @@
             <div class="right_section">
 
                 <div class="right_topbar">
-                    <p class="salutation">Good Morning Alex</p>
+                    <p class="salutation">Good <span class="hello">Morning</span> Alex</p>
                     <div class="space"> </div>
-                    <div class="expense_status okay"></div>
+                    <div class="expense_status"></div>
                     <div class="user">
                         <img src="img/mk1.jpg" alt="" class="user_img" title="Alex"/>
                     </div>
@@ -62,15 +62,15 @@
                     <div class="card current_expense">
                         <div class="month">
                             <p class="month_highlight">Total expense this month:</p>
-                            <p class="amount">Ksh. 90,583.00</p>
+                            <p class="amount amt curExp">0</p>
                         </div>
                         <div class="month">
                             <p class="month_highlight">Daily average expense:</p>
-                            <p class="amount">Ksh. 5,421.36</p>
+                            <p class="amount amt curDaily">0</p>
                         </div>
-                        <div class="card_percentage">
-                            <i class="uil uil-angle-down card_percentage-icon"></i>
-                            <span id="current_percentage">-3%</span>
+                        <div class="card_percentage percIndicator hidden">
+                            <i class="uil card_percentage-icon"></i>
+                            <span id="current_percentage"> </span>
                             <hr>
                             <span class="percentage_month">last month</span> 
 
@@ -81,11 +81,11 @@
                     <div class="card last_expense">
                         <div class="month">
                             <p class="month_highlight">Total expense last month:</p>
-                            <p class="amount">Ksh. 90,583.00</p>
+                            <p class="amount amt prevExp">0</p>
                         </div>
                         <div class="month">
                             <p class="month_highlight">Daily average expense:</p>
-                            <p class="amount">Ksh. 5,421.36</p>
+                            <p class="amount amt prevDaily">0</p>
                         </div>
                         <div class="card_percentage">
                             <i class="uil uil-money-withdrawal last_month-icon"></i>
@@ -95,16 +95,16 @@
                     <div class="card">
                         <div class="month">
                             <p class="month_highlight">Monthly Budget:</p>
-                            <p class="amount">Ksh. 100,000.00</p>
+                            <p class="amount">Ksh. <span class="budget">12,000.00</span> </p>
                         </div>
                         <div class="month">
-                            <p class="month_highlight">Remaining:</p>
-                            <p class="amount">Ksh. 5,421.36</p>
+                            <p class="month_highlight remaining">Remaining:</p>
+                            <p class="amount amt remainingAmt">0</p>
                         </div>
 
                         <div class="card_percentage piechart">
-                            <div class="pie animate" style="--p:60">
-                                Total spent <span class="pie_percentage"> 60% </span>
+                            <div class="pie animate">
+                                <span class="pie_percentage"> </span>
                             </div>
                         </div>
                     </div>
@@ -114,7 +114,8 @@
         <!--=========================== table ========================-->
                 <div class="table_container">
                     <div class="transaction_header">Recent Transactions</div>
-                    <div class="transaction_table">
+                    <div class="table" style="margin-left:1rem">
+                        <div class="transaction_table hidden">
 
                         <table>
                             <thead>
@@ -125,47 +126,17 @@
                                 <th> Amount </th>
                               </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="transaction_data">
                               <tr>
-                                <td data-column="Date">12-06-2022</td>
-                                <td data-column="Type">Debit</td>
-                                <td data-column="Merchant">KFC-Kimathi Street</td>
-                                <td data-column="Amount">ksh. 1500</td>
+                                
                               </tr>
-                              <tr>
-                                <td data-column="Date">12-06-2022</td>
-                                <td data-column="Type">Debit</td>
-                                <td data-column="Merchant">KFC-Kimathi Street</td>
-                                <td data-column="Amount">ksh. 1500</td>
-                              </tr>
-                              <tr>
-                                <td data-column="Date">12-06-2022</td>
-                                <td data-column="Type">Debit</td>
-                                <td data-column="Merchant">KFC-Kimathi Street</td>
-                                <td data-column="Amount">ksh. 1500</td>
-                              </tr>
-                              <tr>
-                                <td data-column="Date">12-06-2022</td>
-                                <td data-column="Type">Debit</td>
-                                <td data-column="Merchant">KFC-Kimathi Street</td>
-                                <td data-column="Amount">ksh. 1500</td>
-                              </tr>
-                              
                             </tbody>
                           </table>
-
+                        </div>
                     </div>
                 </div>
-
-
-
-
-
             </div>
-
         </div>
-        
-        
-        <script src="" async defer></script>
+        <script src="/js/app.js" async defer></script>
     </body>
 </html>
