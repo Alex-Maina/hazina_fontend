@@ -1,0 +1,14 @@
+[{
+    "date": "2022-06-19",
+    "merchantName": "John",
+    "type": "debit",
+    "amount": 2000
+   
+},
+{
+    "date": "2022-06-16",
+    "merchantName": "Alex",
+    "type": "debit",
+    "amount": 3400
+}
+]
