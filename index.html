@@ -25,21 +25,35 @@
                     <ul class="nav_menulist">
                         <li class="nav_menu">
                             <a href="" class="nav_link">
-                                <i class="uil uil-create-dashboard menu-icon"></i>
+                                <i class="uil uil-create-dashboard menu_icon"></i>
                                 Dashboard
                             </a>
                         </li>
                         <li class="nav_menu">
                             <a href="" class="nav_link">
-                                <i class="uil uil-analytics menu-icon"></i>
+                                <i class="uil uil-analytics menu_icon"></i>
                                 Analytics
                             </a>
                         </li>
-                        <li class="nav_menu">
-                            <a href="" class="nav_link">
-                                <i class="uil uil-setting menu-icon"></i>
-                                Settings
-                            </a>
+                    </ul>
+                    <ul class="nav_menulist">
+                        <li class="nav_menu account-list">
+                            <i class="uil uil-money-stack menu-icon"></i>
+                                Accounts
+                                <ul class="accountList">
+                                <li class ="">
+                                    <i class="uil uil-money-bill"></i>
+                                    <span class="accNum acc1"> 12345 </span> 
+                                </li>
+                                <li class ="">
+                                    <i class="uil uil-money-bill"></i>
+                                    <span class="accNum acc2"> 123456</span>
+                                </li>
+                                <li class ="">
+                                    <i class="uil uil-money-bill"></i>
+                                    <span class="accNum acc3">567888</span>
+                                </li>
+                                
                         </li>
                     </ul>
                 </div>
@@ -51,7 +65,9 @@
 
                 <div class="right_topbar">
                     <p class="salutation">Good <span class="hello">Morning</span> Alex</p>
-                    <div class="space"> </div>
+                    <div class="space"> 
+                        <span class="acc"> 123456 </span>
+                    </div>
                     <div class="expense_status"></div>
                     <div class="user">
                         <img src="img/mk1.jpg" alt="" class="user_img" title="Alex"/>
@@ -137,6 +153,6 @@
                 </div>
             </div>
         </div>
-        <script src="/js/app.js" async defer></script>
+        <script type="module" src="/js/app.js" async defer></script>
     </body>
 </html>

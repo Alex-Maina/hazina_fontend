@@ -1,3 +1,24 @@
+const accNum = document.querySelector('.accNum');
+const acc =document.querySelector('.acc');
+
+const acc1 = document.querySelector('.acc1');
+acc1.addEventListener('click', (e) => {
+    acc.innerHTML = acc1.innerHTML
+})
+
+const acc2 = document.querySelector('.acc2');
+acc2.addEventListener('click', (e) => {
+    acc.innerHTML = acc2.innerHTML
+})
+
+const acc3 = document.querySelector('.acc3');
+acc3.addEventListener('click', (e) => {
+    acc.innerHTML = acc3.innerHTML
+})
+
+const curl = acc.innerHTML;
+
+
 //Salutation
 if((new Date().getHours()) < 24){
     document.querySelector('.hello').innerHTML="Evening";
@@ -21,16 +42,18 @@ function zeroData() {
         document.querySelector('.expense_status').classList='';
 }
 
+
+
 //Function to fetch json data
 async function getTransactions() {
-    let url = 'http://127.0.0.1:5000/api/transactions/12345'; //'http://127.0.0.1:5000/api/transactions/12345'
+    let url = 'http://127.0.0.1:5000/api/transactions/'+curl; //static/test.json
     try {
         let res = await fetch(url);
         return await res.json();
     } catch (error) {
-        console.log(error);
-        zeroData();
-        document.querySelector('.table').innerHTML = "Sorry, an error occured while fetching your financial records. <br/>Please try again later as we try to trouble shoot.<br/>Thanks for your patience.";
+            console.log(error);
+            zeroData();
+            document.querySelector('.table').innerHTML = "Sorry, account not found";
     }
 }
 
